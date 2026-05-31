@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c6fef"/>
+      <stop offset="100%" stop-color="#2b49c9"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+
+  <!-- BlockNet logo: shield + ban circle, centered in the square -->
+  <svg x="18" y="14" width="92" height="100" viewBox="0 0 24 24"
+       fill="none" stroke="white" stroke-width="1.55"
+       stroke-linecap="round" stroke-linejoin="round"
+       filter="url(#glow)">
+    <!-- Shield -->
+    <path d="M12 3l7 3v5c0 4.4-2.9 7.6-7 9-4.1-1.4-7-4.6-7-9V6l7-3z"/>
+    <!-- Ban circle -->
+    <path d="M8.5 10.5a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0-7 0"/>
+    <!-- Diagonal strike -->
+    <path d="M9 7.5l6 6"/>
+  </svg>
+</svg>

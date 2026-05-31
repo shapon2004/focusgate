@@ -1,0 +1,138 @@
+/* BlockNet block screen — Crisp Light */
+.bs, .bs * { box-sizing: border-box; margin: 0; }
+.bs {
+  --bg:          #f4f6fb;
+  --panel:       #ffffff;
+  --panel-2:     #eef2fa;
+  --border:      #e3e8f3;
+  --text:        #19223a;
+  --muted:       #69728c;
+  --faint:       #9aa3ba;
+  --accent:      #3a5bd9;
+  --accent-soft: rgba(58,91,217,0.10);
+  --accent-2:    rgba(58,91,217,0.18);
+  --danger:      #d6436a;
+  min-height: 100vh; width: 100%;
+  font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(90% 70% at 50% -10%, #e4e9f8 0%, transparent 55%),
+    radial-gradient(70% 60% at 85% 110%, #ece7f7 0%, transparent 50%),
+    #eef1f8;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 40px 24px;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* brand */
+.bs-brand { display: flex; align-items: center; gap: 10px; margin-bottom: auto; width: 100%; max-width: 560px; }
+.bs-logo {
+  width: 28px; height: 28px; border-radius: 8px; background: var(--accent);
+  display: grid; place-items: center; box-shadow: 0 2px 10px var(--accent-soft);
+}
+.bs-logo svg { width: 16px; height: 16px; }
+.bs-brand-name { font-size: 14px; font-weight: 680; letter-spacing: -0.02em; }
+
+/* center stack */
+.bs-stage {
+  margin: auto; width: 100%; max-width: 560px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.bs-emblem {
+  width: 92px; height: 92px; border-radius: 26px;
+  background: var(--panel); border: 1px solid var(--border);
+  display: grid; place-items: center; color: var(--accent);
+  box-shadow: 0 16px 40px -16px rgba(40,55,110,0.35), 0 0 0 8px rgba(58,91,217,0.05);
+  position: relative; margin-bottom: 26px;
+}
+.bs-emblem svg { width: 40px; height: 40px; }
+.bs-emblem::after {
+  content: ""; position: absolute; inset: -8px; border-radius: 32px;
+  border: 1px dashed var(--accent-2); opacity: .5;
+}
+.bs-kicker { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 12px; }
+.bs-title  { font-size: 34px; font-weight: 720; letter-spacing: -0.035em; line-height: 1.08; }
+.bs-domain {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
+  padding: 8px 14px 8px 10px; border-radius: 999px;
+  background: var(--panel); border: 1px solid var(--border);
+  font-size: 14px; font-weight: 620; color: var(--text);
+  box-shadow: 0 1px 2px rgba(25,34,58,0.05);
+}
+.bs-fav { width: 22px; height: 22px; border-radius: 6px; display: grid; place-items: center; font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; }
+.bs-reason { margin-top: 16px; font-size: 14.5px; color: var(--muted); line-height: 1.5; max-width: 380px; }
+.bs-reason b { color: var(--text); font-weight: 640; }
+
+/* session strip */
+.bs-session {
+  margin-top: 26px; display: flex; align-items: center; gap: 13px;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 14px; padding: 12px 16px 12px 13px;
+  box-shadow: 0 8px 24px -14px rgba(40,55,110,0.3);
+}
+.bs-ring {
+  --p: 0; width: 46px; height: 46px; border-radius: 50%; flex: 0 0 auto;
+  display: grid; place-items: center;
+  background:
+    radial-gradient(closest-side, var(--panel) 76%, transparent 78%),
+    conic-gradient(var(--accent) calc(var(--p)*1%), var(--border) 0);
+}
+.bs-ring span { font-size: 12px; font-weight: 720; }
+.bs-session-txt { text-align: left; display: flex; flex-direction: column; gap: 2px; }
+.bs-session-time { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.bs-session-lbl  { font-size: 12px; color: var(--muted); font-weight: 540; }
+
+/* quote */
+.bs-quote {
+  margin-top: 28px; max-width: 440px;
+  font-size: 16.5px; font-weight: 520; line-height: 1.5; color: var(--text);
+  font-style: italic;
+}
+.bs-quote::before { content: "\201C"; color: var(--accent); }
+.bs-quote::after  { content: "\201D"; color: var(--accent); }
+
+/* actions */
+.bs-actions { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.bs-btn {
+  appearance: none; font-family: inherit; cursor: pointer;
+  border-radius: 11px; font-size: 14px; font-weight: 640; letter-spacing: -0.01em;
+  padding: 13px 22px; border: 1px solid transparent;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: filter .14s, background .14s, border-color .14s, transform .05s;
+}
+.bs-btn:active { transform: translateY(1px); }
+.bs-btn svg { width: 17px; height: 17px; }
+.bs-btn.primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px -8px rgba(58,91,217,0.6); }
+.bs-btn.primary:hover { filter: brightness(1.07); }
+.bs-btn.ghost   { background: var(--panel); color: var(--muted); border-color: var(--border); }
+.bs-btn.ghost:hover { color: var(--text); border-color: var(--faint); }
+
+/* unblocked state */
+.bs-unblocked { margin-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 14px; animation: bs-pop .35s cubic-bezier(.34,1.56,.64,1); }
+@keyframes bs-pop { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+.bs-unblocked-pill {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+  padding: 12px 18px; box-shadow: 0 8px 24px -14px rgba(40,55,110,0.3);
+}
+.bs-unblocked-pill .t { font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.bs-unblocked-pill .l { font-size: 12.5px; color: var(--muted); }
+.bs-relink {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  font-family: inherit; font-size: 13px; font-weight: 600; color: var(--accent);
+  text-decoration: underline; text-underline-offset: 3px;
+}
+
+/* footer streak */
+.bs-foot {
+  margin-top: auto; padding-top: 36px;
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 13px; color: var(--muted); font-weight: 560;
+}
+.bs-foot .flame { color: var(--accent); display: grid; place-items: center; }
+.bs-foot .flame svg { width: 16px; height: 16px; }
+.bs-foot b { color: var(--text); font-weight: 680; }
+.bs-foot-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--faint); }
+.bs-foot-link { font-size: 13px; font-weight: 620; color: var(--accent); text-decoration: none; }
+.bs-foot-link:hover { text-decoration: underline; text-underline-offset: 3px; }
