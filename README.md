@@ -1,1 +1,1 @@
-# A chrome extension to for keep focus during study or office work. A comprehensive tool to define settings on demand or daily basis.
+## A chrome extension to keep focus during study or office work. A comprehensive tool to define settings on-demand or daily basis. Custom block sites where you can add any sites that you want to block.
